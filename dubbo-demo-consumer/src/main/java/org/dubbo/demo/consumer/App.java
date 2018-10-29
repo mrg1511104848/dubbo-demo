@@ -16,7 +16,7 @@ public class App
 //		System.setProperty("java.net.preferIPv4Stack", "true");
         ReferenceConfig<GreetingsService> reference = new ReferenceConfig<>(); // #1
         reference.setApplication(new ApplicationConfig("first-dubbo-client")); // #2
-        reference.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234")); // #3
+        reference.setRegistry(new RegistryConfig("zookeeper://localhost:2181")); // #3
         reference.setInterface(GreetingsService.class); // #4
         GreetingsService greetingsService = reference.get(); // #5
         String message = greetingsService.sayHi("dubbo"); // #6

@@ -19,7 +19,7 @@ public class App
 //		System.setProperty("java.net.preferIPv4Stack", "true");
         ServiceConfig<GreetingsService> service = new ServiceConfig<>(); // #1
         service.setApplication(new ApplicationConfig("first-dubbo-provider")); // #2
-        service.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234")); // #3
+        service.setRegistry(new RegistryConfig("zookeeper://localhost:2181")); // #3
         service.setInterface(GreetingsService.class); // #4
         service.setRef(new GreetingsServiceImpl()); // #5
         service.export(); // #6
